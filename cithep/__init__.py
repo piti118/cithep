@@ -2,6 +2,7 @@ import numpy as np
 from pylab import plot
 from matplotlib import pyplot as plt
 import __builtin__
+from lundtype import LundType
 def mid(x):
     return (x[1:]+x[:-1])/2
 #plot a function
@@ -37,7 +38,6 @@ def projection(x,y,weights=None,bins=40,range=None,ax=None):
     binno = np.digitize(x,edges)
     
     wy = y*weights
-    sumw = sum(weights)
     
     tp_mean = np.zeros(bins-1)
     tp_std = np.zeros(bins-1)
@@ -46,9 +46,10 @@ def projection(x,y,weights=None,bins=40,range=None,ax=None):
         i = idigi-1
         tmp_wy = wy[binno==i]
         tmp_y = y[binno==i]
-        
+        w = weights[binno==i]
+        sumw = np.sum(w)
         tp_mean[i] = np.sum(tmp_wy)/sumw
-        tmp = np.sum(weights[binno==i]*(tmp_y-tp_mean[i])**2)
+        tmp = np.sum(wfg*(tmp_y-tp_mean[i])**2)
         tp_std[i] = np.sqrt(tmp/sumw)
         
     me = mid(edges)
