@@ -2,7 +2,7 @@ import numpy as np
 from pylab import plot
 from matplotlib import pyplot as plt
 import __builtin__
-from lundtype import LundType
+from lundtype import LundType,invlund
 def mid(x):
     return (x[1:]+x[:-1])/2
 #plot a function
