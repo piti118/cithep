@@ -56,6 +56,14 @@ def projection(x,y,weights=None,bins=40,range=None,ax=None):
     print len(me),bins
     return ax.errorbar(me,tp_mean,tp_std)
 
+def in_ipython():
+#check if in ipython session
+    try:
+        __IPYTHON__
+        return True
+    except:
+        return False
+
 class Struct:
     def __init__(self, **entries): 
         self.__dict__.update(entries)
