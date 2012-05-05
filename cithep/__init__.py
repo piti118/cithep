@@ -49,9 +49,13 @@ def projection(x,y,weights=None,bins=40,range=None,ax=None):
         w = weights[binno==i]
         sumw = np.sum(w)
         tp_mean[i] = np.sum(tmp_wy)/sumw
-        tmp = np.sum(wfg*(tmp_y-tp_mean[i])**2)
+        tmp = np.sum(w*(tmp_y-tp_mean[i])**2)
         tp_std[i] = np.sqrt(tmp/sumw)
         
     me = mid(edges)
     print len(me),bins
     return ax.errorbar(me,tp_mean,tp_std)
+
+class Struct:
+    def __init__(self, **entries): 
+        self.__dict__.update(entries)

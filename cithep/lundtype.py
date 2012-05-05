@@ -641,8 +641,7 @@ class LundType:
 
 _invlund = {v:k for k,v in LundType.__dict__.items()}#for inverse lookup
 def invlund(x):
-    if isinstance(x,collections.Iterable):
+    try:
         return [_invlund[y] for y in x]
-    else:
+    except:
         return _invlund[x]
-    return
