@@ -1,8 +1,10 @@
+from math import sqrt
 import numpy as np
 from pylab import plot
 from matplotlib import pyplot as plt
+from numpy.random import randn
 import __builtin__
-from lundtype import LundType,invlund
+
 def mid(x):
     return (x[1:]+x[:-1])/2
 #plot a function
@@ -63,6 +65,15 @@ def merge_dict(*arg):
         ret.update(d)
     return ret
 
+def average_dict(d1,d2):
+    return {k:(d1[k]+d2[k])/2.0 for k in d1}
+
+def pf(n):
+
+    """
+    poisson fluctuate n
+    """
+    return round(n + randn(1)[0]*sqrt(n))
 
 class Struct:
     def __init__(self, **entries): 
