@@ -18,6 +18,11 @@ class TestCithep(unittest.TestCase):
         for k,v in d2.items():
             self.assertIn(k,ret)
             self.assertEqual(v,ret[k])
+    
+    def test_tuple2arg(self):
+        td = ('x','y','z')
+        ts = tuple2arg(td)
+        self.assertEqual(ts,'(x, y, z, )')
 
 if __name__ == '__main__':
     unittest.main()
