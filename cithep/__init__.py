@@ -1,7 +1,6 @@
+from inipython import *
 from math import sqrt
 import numpy as np
-from pylab import plot
-from matplotlib import pyplot as plt
 from numpy.random import randn
 import __builtin__
 
@@ -13,6 +12,8 @@ def plotf(x,f,*arg,**kwarg):
     return plotv(x,v,*arg,**kwarg)
     
 def plotv(x,f,*arg,**kwarg):
+    from pylab import plot
+    from matplotlib import pyplot as plt
     r = x
     if isinstance(x, (tuple)):
         r = np.linspace(x[0],x[1],100)
@@ -29,6 +30,8 @@ def grep(s,a):
     return [x for x in a if s in x]
 
 def projection(x,y,weights=None,bins=40,range=None,ax=None):
+    from pylab import plot
+    from matplotlib import pyplot as plt
     if ax is None: ax = plt.gca()
     bin_range = range
     range = __builtin__.range
