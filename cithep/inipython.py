@@ -1,8 +1,10 @@
 def dp(o):
     try:
         __IPYTHON__
+        from IPython.core.display import display
         display(o)
     except:
+        print 'here'
         print o
 
 def inipython():
@@ -11,8 +13,6 @@ def inipython():
         __IPYTHON__
         return True
     except:
-        print 'here'
-
         return False
     
 def initMPL():
