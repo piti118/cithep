@@ -4,7 +4,6 @@ def dp(o):
         from IPython.core.display import display
         display(o)
     except:
-        print 'here'
         print o
 
 def inipython():
