@@ -1,7 +1,8 @@
 def dp(o):
     try:
+        from IPython.core.display import display
         display(o)
-    except NameError:
+    except:
         print o
 
 def inipython():
