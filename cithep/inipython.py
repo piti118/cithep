@@ -1,6 +1,6 @@
 def dp(o):
     try:
-        from IPython.core.display import display
+        __IPYTHON__
         display(o)
     except:
         print o
