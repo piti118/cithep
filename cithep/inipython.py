@@ -1,11 +1,8 @@
-try:
-    display
-except NameError:
-    print 'here'
-    global display
-    def tmp(x):
-        print x
-    display = tmp
+def dp(o):
+    try:
+        display(o)
+    except NameError:
+        print o
 
 def inipython():
 #check if in ipython session
