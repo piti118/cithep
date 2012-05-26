@@ -3,6 +3,7 @@ from math import sqrt
 import numpy as np
 from numpy.random import randn
 import __builtin__
+from qstat import qstat
 
 def mid(x):
     return (x[1:]+x[:-1])/2
