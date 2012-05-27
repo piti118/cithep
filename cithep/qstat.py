@@ -9,10 +9,10 @@ class Job:
         self.status = qtoken[4]
         self.jque = qtoken[5]
     
-    def qstat():
-        qout = check_output('qstat').split('\n')[2:-1]
-        ret = []
-        for line in qout:
-            ret.append(Job(line))
-        return ret
+def qstat():
+    qout = check_output('qstat').split('\n')[2:-1]
+    ret = []
+    for line in qout:
+        ret.append(Job(line))
+    return ret
 
