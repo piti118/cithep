@@ -72,6 +72,7 @@ def merge_dict(*arg):
 def average_dict(d1,d2):
     return {k:(d1[k]+d2[k])/2.0 for k in d1}
 
+
 def pf(n):
 
     """
@@ -79,12 +80,15 @@ def pf(n):
     """
     return round(n + randn(1)[0]*sqrt(n))
 
+
 def tuple2arg(t):
     ret = ''
     for v in t: ret +='%s, '%v
     ret = '(%s)'%ret
     return ret
 
+
 class Struct:
     def __init__(self, **entries): 
         self.__dict__.update(entries)
+
